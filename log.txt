@@ -1,0 +1,28 @@
+On branch feature/spring-5-details
+Your branch is ahead of 'origin/feature/spring-5-details' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+On branch feature/spring-5-details
+Your branch is ahead of 'origin/feature/spring-5-details' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+ocramius/package-versions:  Generating version class...
+ocramius/package-versions: ...done generating version class
+
+                                                              
+                    Application Migrations                    
+                                                              
+
+No migrations to execute.
+On branch feature/spring-5-details
+Your branch is ahead of 'origin/feature/spring-5-details' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+On branch feature/spring-5-details
+Your branch is ahead of 'origin/feature/spring-5-details' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
