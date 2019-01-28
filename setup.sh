@@ -23,9 +23,16 @@ readonly BLOCK_FILE_NAME=".block";
 
 getReposUrls()
 {
+  local _cpBinary=$(which cp);
   if [ "$FLAGS" == "devops" ];then    
     $RUN_DIRECTORY="devops";
     echo "Executing as devop mode."
+  fi
+  if [ ! -f "$RUN_DIRECTORY/.env" ];then
+    cd $RUN_DIRECTORY;
+    echo '-- Copying .env docker environment file';
+    $_cpBinary .env.dist .env;
+    cd ..;
   fi
   readonly BACKEND_REPOSITORY=$(cat $RUN_DIRECTORY/.env | grep -i URL_BACKEND_API_REPO | cut -d'=' -f2);
 }

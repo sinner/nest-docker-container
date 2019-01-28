@@ -52,18 +52,18 @@ services:
       - "${REDIS_PORT}:5672"
       - "${REDIS_WEB_MANAGEMENT_PORT}:15672"
 
-  project-app-rabbitmq:
-    container_name: ${PROJECT_NAME}-queue-rabbitmq
-    hostname: ${RABBIT_HOST_NAME}
-    build:        
-      context: ../
-      dockerfile: ./local/docker/queue/files/Dockerfile
-    restart: always
-    ports:
-      - "${RABBIT_MAIN_PORT}:5672"
-      - "${RABBIT_WEB_MANAGEMENT_PORT}:15672"
-    volumes:      
-      - ./${RABBIT_CONFIG_MAIN_DIR}:/etc/rabbitmq:rw
-      - ./${RABBIT_CONFIG_MAIN_DIR}/data:/var/lib/rabbitmq
-    networks:
-      - project-network
+  # project-app-rabbitmq:
+  #   container_name: ${PROJECT_NAME}-queue-rabbitmq
+  #   hostname: ${RABBIT_HOST_NAME}
+  #   build:        
+  #     context: ../
+  #     dockerfile: ./local/docker/queue/files/Dockerfile
+  #   restart: always
+  #   ports:
+  #     - "${RABBIT_MAIN_PORT}:5672"
+  #     - "${RABBIT_WEB_MANAGEMENT_PORT}:15672"
+  #   volumes:      
+  #     - ./${RABBIT_CONFIG_MAIN_DIR}:/etc/rabbitmq:rw
+  #     - ./${RABBIT_CONFIG_MAIN_DIR}/data:/var/lib/rabbitmq
+  #   networks:
+  #     - project-network
