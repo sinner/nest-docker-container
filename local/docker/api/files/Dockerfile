@@ -28,9 +28,13 @@ COPY ./local/docker/api/files/docker-entrypoint.sh /usr/local/bin/docker-entrypo
 
 RUN chmod +x /usr/local/bin/docker-entrypoint
 
-# ENTRYPOINT ["docker-entrypoint"]
+ENTRYPOINT ["docker-entrypoint"]
 
 RUN npm install
+
+RUN chown -R node:node ./
+
+COPY ./${API_BACKEND_DIR} ./
 
 # RUN ts-node ./node_modules/.bin/typeorm migration:run -t false
 
