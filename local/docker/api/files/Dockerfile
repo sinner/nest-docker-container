@@ -1,4 +1,4 @@
-FROM nestjs/cli:latest
+FROM node:10-alpine
 ARG API_BACKEND_DIR=project-api
 
 # Set working dir
@@ -16,11 +16,11 @@ COPY ./${API_BACKEND_DIR}/package*.json ./
 
 RUN apk update
 
-RUN apk add nano
+RUN apk add net-tools nano watch -y 
 
-RUN npm install -g npm
+RUN npm install -g npm@latest
 
-RUN npm install -g typescript ts-node typeorm nodemon
+RUN npm install -g  typescript ts-lint ts-node typeorm nodemon @nestjs/cli
 
 RUN chown -R node:node ./
 
