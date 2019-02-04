@@ -1,4 +1,4 @@
-FROM node:10-alpine
+FROM node:10
 ARG API_BACKEND_DIR=project-api
 
 # Set working dir
@@ -14,9 +14,9 @@ COPY ./${API_BACKEND_DIR}/package*.json ./
 # Create diocesan user, but now, we've got a 'node' user with UID 1000
 # RUN adduser --disabled-password --uid 1000 --home "/var/srv/app" --gecos "Guest user to execute common binaries into the project" node
 
-RUN apk update
+RUN apt-get update
 
-RUN apk add net-tools nano watch -y 
+RUN apt-get install net-tools nano watch -y 
 
 RUN npm install -g npm@latest
 
